@@ -4,7 +4,7 @@
   "author": "cannd2",
   "repository": {
     "type": "git",
-    "url": "https://github.com/none/none"
+    "url": "https://github.com/cannd/script-runner"
   },
   "main": "dist/extension.js",
   "devDependencies": {
@@ -29,7 +29,7 @@
     "color": "#3B3738",
     "theme": "dark"
   },
-  "homepage": "https://github.com/none",
+  "homepage": "https://github.com/cannd/script-runner",
   "icon": "assets/icon.png",
   "keywords": [
     "node.js",
