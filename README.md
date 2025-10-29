@@ -26,10 +26,10 @@ For example to add button(s) for function foo, add the following settings to eit
 **Example of usage**:
 
 <!-- https://github.com/samuelgja/better-tests/blob/main/assets/example.png?raw=true -->
-![result](https://github.com/cannd/script-runner/blob/main//main/assets/example.png?raw=true )
+![result](https://github.com/cannd/script-runner/blob/main/assets/example.png?raw=true )
 
 And the corresponding configuration file (.vscode/settings.json):
-![configuration](https://github.com/cannd/script-runner/blob/main//main/assets/settings.png?raw=true )
+![configuration](https://github.com/cannd/script-runner/blob/main/assets/settings.png?raw=true )
 
 
 ## Configuration
