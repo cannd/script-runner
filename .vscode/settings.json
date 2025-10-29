@@ -1,0 +1,13 @@
+{
+  "fbc.scriptrunner.filePattern": "**/*.script.{js,ts,tsx,jsx}",
+  "fbc.scriptrunner.functions": {
+    "script": {
+      "command": "npx tsx {filePath} {scriptName}",
+      "title": "Run with tsx"
+    },
+    "script-ts-node": {
+      "command": "npx ts-node {filePath} {scriptName}",
+      "title": "Run with ts-node"
+    }
+  }
+}

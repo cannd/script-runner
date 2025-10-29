@@ -1,0 +1,101 @@
+{
+  "name": "fbc-script-runner",
+  "version": "0.0.2",
+  "author": "cannd2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/none/none"
+  },
+  "main": "dist/extension.js",
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "@types/vscode": "^1.60.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "@vscode/vsce": "^3.6.2",
+    "esbuild": "^0.19.2",
+    "prettier": "^3.3.3",
+    "typescript": "^5.0.0"
+  },
+  "description": "Run a command/script from the editor window",
+  "displayName": "Script run",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "extensionKind": [
+    "workspace"
+  ],
+  "galleryBanner": {
+    "color": "#3B3738",
+    "theme": "dark"
+  },
+  "homepage": "https://github.com/none",
+  "icon": "assets/icon.png",
+  "keywords": [
+    "node.js",
+    "javascript",
+    "typescript",
+    "runner",
+    "codelens",
+    "vscode"
+  ],
+  "license": "MIT",
+  "publisher": "cannd2",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "pretest": "bun run build",
+    "test": "node scripts/test.mjs",
+    "dev": "vscode-test --config scripts/dev.mjs",
+    "prepublish": "npm version patch",
+    "publish": "cd extension && bunx vsce publish"
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": false,
+      "description": "This extension needs to be able to run your code using SCript Runner."
+    }
+  },
+  "categories": [
+    "Programming Languages",
+    "Testing"
+  ],
+  "contributes": {
+    "configuration": {
+      "title": "fbc script runner",
+      "properties": {
+        "fbc.scriptrunner.filePattern": {
+          "type": "string",
+          "default": "**/*.script.{js,ts,tsx,jsx}",
+          "description": "Glob pattern to match test files (e.g., **/*.script.{js,ts,tsx,jsx})"
+        },
+        "fbc.scriptrunner.functions": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "command": {
+                "type": "string",
+                "description": "Command to execute. Supported variables: {filePath} {scriptName}",
+                "default": "npx tsx {filePath} {scriptName}"
+              },
+              "title": {
+                "type": "string",
+                "description": "Title to display",
+                "default": "Run script"
+              }
+            }
+          },
+          "default": {
+            "script": {
+              "command": "npx tsx {filePath} {scriptName}",
+              "title": "Run script"
+            }
+          }
+        }
+      }
+    }
+  }
+}
